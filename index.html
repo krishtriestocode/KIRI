@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Krishanth Vamsi K (Kiri) | B.Tech CSE student</title>
+<meta name="description" content="Portfolio of Krishanth Vamsi K (Kiri), a second-year B.Tech Computer Science and Engineering student.">
+<meta property="og:title" content="Krishanth Vamsi K (Kiri)">
+<meta property="og:description" content="Second-year B.Tech CSE student. Professional watcher of unnecessary content.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8E%A7%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #EEF1F4;
+    --ink: #101828;
+    --muted: #556070;
+    --line: #C9D1DB;
+    --accent: #2340E8;
+    --accent-ink: #FFFFFF;
+
+    --display: "Bricolage Grotesque", "Helvetica Neue", Arial, sans-serif;
+    --text: "Source Serif 4", Georgia, "Times New Roman", serif;
+
+    box-sizing: border-box;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0E1320;
+      --ink: #E8ECF4;
+      --muted: #9AA4B8;
+      --line: #28324A;
+      --accent: #8499FF;
+      --accent-ink: #0E1320;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0E1320;
+    --ink: #E8ECF4;
+    --muted: #9AA4B8;
+    --line: #28324A;
+    --accent: #8499FF;
+    --accent-ink: #0E1320;
+  }
+
+  *, *::before, *::after { box-sizing: inherit; }
+  html { scroll-padding-top: env(safe-area-inset-top, 0px); scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--text);
+    font-size: 1.125rem;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; }
+  :focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+
+  .layout {
+    display: grid;
+    grid-template-columns: minmax(0, 5.5fr) minmax(0, 6.5fr);
+    min-height: 100vh;
+  }
+
+  /* ---------- Left column ---------- */
+  .side {
+    position: sticky;
+    top: env(safe-area-inset-top, 0px);
+    align-self: start;
+    height: calc(100vh - env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px));
+    padding: clamp(1.5rem, 4vw, 3.5rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-right: 1px solid var(--line);
+  }
+  .name {
+    margin: 0;
+    font-family: var(--display);
+    font-weight: 800;
+    font-stretch: 75%;
+    font-size: clamp(3rem, 7.4vw, 8rem);
+    line-height: 0.88;
+    letter-spacing: -0.04em;
+  }
+  .name span { display: block; overflow: hidden; padding: 0 0 0.08em; }
+  .name span i {
+    display: block;
+    font-style: normal;
+    animation: rise 0.9s cubic-bezier(.2,.8,.2,1) both;
+  }
+  .name span:nth-child(2) i { animation-delay: 0.12s; }
+  @keyframes rise { from { transform: translateY(105%); } to { transform: none; } }
+
+  .role {
+    margin: 1.5rem 0 0;
+    max-width: 26ch;
+    font-family: var(--display);
+    font-size: 1.35rem;
+    line-height: 1.3;
+    font-weight: 500;
+    color: var(--muted);
+  }
+
+  .nav { margin: 0; padding: 0; list-style: none; font-family: var(--display); font-size: 1.05rem; }
+  .nav a {
+    display: inline-block;
+    padding: 0.2rem 0;
+    text-decoration: none;
+    color: var(--muted);
+    transition: color .15s;
+  }
+  .nav a:hover { color: var(--ink); text-decoration: underline; text-underline-offset: 5px; }
+
+  /* ---------- Right column ---------- */
+  main { padding: clamp(1.5rem, 5vw, 4.5rem); max-width: 56rem; }
+  section { padding: 0 0 clamp(3.5rem, 8vw, 6rem); }
+  section:last-child { padding-bottom: 2rem; }
+  h2 {
+    margin: 0 0 1.5rem;
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: clamp(1.75rem, 3vw, 2.25rem);
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+  }
+  p { margin: 0 0 1.1em; max-width: 62ch; }
+  .lede {
+    font-size: clamp(1.35rem, 2.4vw, 1.75rem);
+    line-height: 1.4;
+    letter-spacing: -0.005em;
+  }
+
+  /* Photo */
+  .photo {
+    position: relative;
+    margin: 0 0 clamp(2rem, 5vw, 3rem);
+    width: min(100%, 24rem);
+  }
+  .photo::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    transform: translate(0.9rem, 0.9rem);
+    background: var(--accent);
+  }
+  .photo img {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    object-position: 50% 25%;
+    background: var(--line);
+  }
+  .photo figcaption {
+    position: relative;
+    margin-top: 1.5rem;
+    font-family: var(--display);
+    font-size: 0.95rem;
+    color: var(--muted);
+  }
+
+  /* Facts list */
+  .facts { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--line); }
+  .facts li {
+    display: grid;
+    grid-template-columns: 9rem 1fr;
+    gap: 1rem;
+    padding: 1.1rem 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .facts .label { font-family: var(--display); color: var(--muted); font-size: 0.95rem; padding-top: 0.2rem; }
+  .facts .value { font-family: var(--display); font-size: 1.2rem; font-weight: 600; line-height: 1.3; }
+  .facts .note { display: block; font-family: var(--text); font-weight: 400; font-size: 1rem; color: var(--muted); margin-top: 0.15rem; }
+
+  /* Contact */
+  .mail {
+    display: inline-block;
+    font-family: var(--display);
+    font-weight: 700;
+    font-stretch: 80%;
+    font-size: clamp(1.9rem, 5vw, 3.6rem);
+    letter-spacing: -0.035em;
+    line-height: 1.05;
+    text-decoration: none;
+    color: var(--accent);
+    word-break: break-word;
+    border-bottom: 3px solid currentColor;
+  }
+  .mail:hover { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+  footer { margin-top: 3rem; font-family: var(--display); font-size: 0.9rem; color: var(--muted); }
+
+  /* ---------- Small screens ---------- */
+  @media (max-width: 860px) {
+    .layout { display: block; }
+    .side {
+      position: static;
+      height: auto;
+      min-height: 80vh;
+      border-right: 0;
+      border-bottom: 1px solid var(--line);
+      gap: 3rem;
+    }
+    .name { font-size: clamp(3.5rem, 17vw, 8rem); }
+    .nav { display: flex; flex-wrap: wrap; gap: 0.25rem 1.5rem; }
+    .facts li { grid-template-columns: 1fr; gap: 0.15rem; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .name span i { animation: none; }
+  }
+</style>
+</head>
+<body>
+<div class="layout">
+
+  <header class="side">
+    <div>
+      <h1 class="name"><span><i>Krishanth</i></span><span><i>Vamsi K</i></span></h1>
+      <p class="role">Kiri. Second-year CSE student and professional watcher of unnecessary content.</p>
+    </div>
+    <nav aria-label="Sections">
+      <ul class="nav">
+        <li><a href="#about">About</a></li>
+        <li><a href="#studies">Studies</a></li>
+        <li><a href="#interests">Interests</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="about">
+      <figure class="photo">
+        <img src="images/kiri.jpg" width="1000" height="971" alt="Krishanth as a school student, smiling in front of posters about a turbofan engine">
+        <figcaption>Throwback.</figcaption>
+      </figure>
+      <h2>About</h2>
+      <p class="lede">I'm Krishanth Vamsi K, but everyone calls me Kiri. I'm studying computer science and want to understand how software gets built, and why it breaks.</p>
+      <p>I'm in the second year of my B.Tech, learning one subject at a time and trying to turn what I learn into things that actually run.</p>
+    </section>
+
+    <section id="studies">
+      <h2>Studies</h2>
+      <ul class="facts">
+        <li>
+          <span class="label">Degree</span>
+          <span class="value">B.Tech<span class="note">Computer Science and Engineering</span></span>
+        </li>
+        <li>
+          <span class="label">Year</span>
+          <span class="value">Second year</span>
+        </li>
+      </ul>
+    </section>
+
+    <section id="interests">
+      <h2>Interests</h2>
+      <p class="lede">Mostly, I watch unnecessary content.</p>
+      <p>Videos I had no reason to click on, rabbit holes I never planned to enter, and topics I will never need for anything. It's research, I tell myself.</p>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <p>Nothing here yet. I'm building things I'll be proud to put on this page, so check back soon.</p>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Want to collaborate, share a good rabbit hole, or just say hi? Send me an email.</p>
+      <a class="mail" href="mailto:kiri@example.com">kiri@example.com</a>
+      <footer>Krishanth Vamsi K, 2026</footer>
+    </section>
+  </main>
+
+</div>
+</body>
+</html>
